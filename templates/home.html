@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="home-page">
+    <div class="page-brand">
+        <img
+            class="page-logo"
+            src="{{ url_for('static', filename='Northumbria_University_Logo.png') }}"
+            alt="Northumbria University Newcastle logo"
+        >
+    </div>
+    <main class="hero-shell">
+        <section class="hero-panel">
+            <p class="eyebrow">JAARK LTD // SYSTEM ONLINE</p>
+            <h1>Welcome to JAARK Support Chatbot</h1>
+            <p class="hero-copy">
+                A chatbot looking to answer all of your routine queries.
+            </p>
+
+            <a class="primary-link" href="/chatbot">Launch Chatbot</a>
+        </section>
+    </main>
+</body>
+</html>

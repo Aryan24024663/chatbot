@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+
+<body class="chat-page">
+<div class="page-brand">
+    <img
+        class="page-logo"
+        src="{{ url_for('static', filename='Northumbria_University_Logo.png') }}"
+        alt="Northumbria University Newcastle logo"
+    >
+</div>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <p class="eyebrow">JAARK LTD // AI SUPPORT</p>
+        <h2>Query Support Chatbot</h2>
+    </div>
+
+    <div id="chatbox"></div>
+
+    <div class="input-row">
+        <input id="userInput" type="text" placeholder="What can we help with...">
+        <button type="button" onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

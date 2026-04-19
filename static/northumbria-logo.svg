@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Northumbria University Newcastle</title>
+  <g fill="#fff">
+    <path d="M29 16h47v34c0 26-17 44-23.5 49C46 94 29 76 29 50V16Z"/>
+    <path d="M33 20h39v30c0 21-13.2 36-19.5 41.3C46.2 86 33 71 33 50V20Z" fill="#050505"/>
+    <path d="M52.5 27l4 8.3 9.1 1.1-6.7 6 1.8 8.8-8.2-4.4-8.2 4.4 1.8-8.8-6.7-6 9.1-1.1 4-8.3Z"/>
+    <path d="M41 60h23v18H41z"/>
+    <path d="M50 60h5v18h-5z" fill="#050505"/>
+    <path d="M41 68h23v5H41z" fill="#050505"/>
+  </g>
+  <g fill="#fff" font-family="Arial, Helvetica, sans-serif">
+    <text x="100" y="48" font-size="26" font-weight="700">Northumbria</text>
+    <text x="100" y="76" font-size="26" font-weight="700">University</text>
+    <text x="100" y="101" font-size="21" letter-spacing="1.2">NEWCASTLE</text>
+  </g>
+</svg>
