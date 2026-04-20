@@ -1,0 +1,7 @@
+flask
+langchain
+langchain_ollama
+pypdf
+python-docx
+Pillow
+pytesseract
