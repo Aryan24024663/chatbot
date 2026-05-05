@@ -1,29 +1,126 @@
-Requirements:
-- Ollama from the ollama website
-    - in your CMD / command line run the command " ollama " to see if its downloaded into your system
-      or just open the ollama application. Once you know its downloaded then run the command "ollama pull gemma:2b"
-      this will download the model "Gemma:2b" to your local machine, its a model based on Googles gemini. It its 
-      only 1.7 GB unlike the other models so it doesnt take up that much storage.
-    - To make sure its downloaded run "ollama list" and you should see "Gemma:2b"
+JAARK Support Chatbot README
 
-- In VS Code: open the files from the one drive.
-
-- If you want to edit it then upload your new edited version with a name like "chatbot_your-name_1" or "chatbot_your-name_2" etc
-  And also add in your own READ.ME.txt file explaining what you added / fixed / whatever, just so we can see whos contributed what they did.
+This is a local Flask chatbot that answers questions using the provided
+documents and references. It uses Ollama with the gemma:7b model.
 
 
-Just copy and paste the code in
+Requirements
+------------
+
+1. Install Ollama from the Ollama website.
+
+2. Check that Ollama works by running:
+
+   ollama
+
+3. Download the model used by the chatbot:
+
+   ollama pull gemma:7b
+
+4. Check that the model is installed:
+
+   ollama list
+
+   You should see gemma:7b in the list.
+
+5. Install the Python packages:
+
+   pip install -r requirements.txt
+
+   The requirements file includes:
+
+   - flask
+   - langchain
+   - langchain_ollama
+   - pypdf
+   - python-docx
+   - Pillow
+   - pytesseract
+
+6. Optional: install Tesseract OCR if you want the chatbot to read text from
+   images inside PDFs.
+
+   If Tesseract is not installed, the chatbot will still work, but OCR text
+   from image-based PDFs may not be available.
 
 
-you might need to install flask, langchain and langchain_ollama to get shit to start working.
-- Do this by the command "pip install x"
-  - X = langchain or flask or langchain_ollama
+How To Run
+----------
 
-create your files in this structre (Flask wont run otherwise)
-- Static
-  - JavaScript (js)
-  - Stylesheet (css)
-- Templates
-  - HTML file
-chatbot python file
-flask app
+From the main project folder, run:
+
+   python3 chatbot/app.py
+
+Then open this address in your browser:
+
+   http://127.0.0.1:5000
+
+The chatbot page is available at:
+
+   http://127.0.0.1:5000/chatbot
+
+
+Project Structure
+-----------------
+
+The Flask app expects this structure:
+
+   chatbot/
+   - app.py
+   - chatbot.py
+   - requirements.txt
+   - READ_ME.txt
+   - documents/
+   - static/
+   - templates/
+
+
+Documents
+---------
+
+Put reference documents inside the documents folder:
+
+   chatbot/documents/
+
+The chatbot currently supports:
+
+   - PDF files (.pdf)
+   - Word documents (.docx)
+
+It also checks for PDF and Word files directly inside the chatbot folder.
+
+
+How The Chatbot Answers
+-----------------------
+
+When a user asks a question, the chatbot:
+
+1. Loads the provided PDF and Word documents.
+2. Extracts the text from those documents.
+3. Splits long documents into smaller chunks.
+4. Compares the question with the document chunks.
+5. Selects the most relevant document section.
+6. Answers using only the provided reference material.
+7. Adds a source reference at the end of the answer when possible.
+
+Example answer format:
+
+   The answer from the document goes here.
+
+   Source: example.pdf | Page 2
+
+If the answer is not clearly found in the documents, the chatbot should reply:
+
+   I can only answer questions using the provided documents and references.
+
+
+Notes
+-----
+
+- The chatbot is designed to avoid using outside knowledge.
+- Simple messages like hello, thanks, ok, and bye are handled with friendly
+  preset responses.
+- If port 5000 is already in use, stop the old Flask process or change the port
+  in app.py.
+- Keep any new project notes clear so other contributors can understand what
+  changed.
